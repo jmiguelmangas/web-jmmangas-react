@@ -41,8 +41,20 @@ const Services = () => {
   const handleDotClick = (index) => {
     setCurrentIndex(index);
     const track = trackRef.current;
-    const slideWidth = track.clientWidth; // Ancho de cada slide
+    const slideWidth = track.clientWidth; // Width of each slide
     track.style.transform = `translateX(-${slideWidth * index}px)`;
+  };
+
+  const handlePrevClick = () => {
+    if (currentIndex > 0) {
+      handleDotClick(currentIndex - 1);
+    }
+  };
+
+  const handleNextClick = () => {
+    if (currentIndex < services.length - 1) {
+      handleDotClick(currentIndex + 1);
+    }
   };
 
   useEffect(() => {
@@ -56,25 +68,33 @@ const Services = () => {
         dot.removeEventListener('click', () => handleDotClick(index));
       });
     };
-  }, []);
+  }, [currentIndex]);
 
   return (
     <section id="services">
       <div className="carousel">
+        {currentIndex > 0 && (
+          <button className="carousel-nav prev" onClick={handlePrevClick} aria-label="Previous slide">&#9664;</button>
+        )}
         <div className="carousel-track" ref={trackRef}>
           {services.map((service) => (
             <div key={service.id} className="carousel-slide">
-              <div className="service-image-container">
-                <img src={service.image} alt={service.title} className="service-image" />
-              </div>
-              <div className="service-text-container">
-                <h2>{service.title}</h2>
-                <p>{service.description}</p>
-                <a href={service.link} className="service-button">Ver más</a>
+              <div className="service-content">
+                <div className="service-image-container">
+                  <img src={service.image} alt={service.title} className="service-image" />
+                </div>
+                <div className="service-text-container">
+                  <h2>{service.title}</h2>
+                  <p>{service.description}</p>
+                  <a href={service.link} className="service-button">Ver más</a>
+                </div>
               </div>
             </div>
           ))}
         </div>
+        {currentIndex < services.length - 1 && (
+          <button className="carousel-nav next" onClick={handleNextClick} aria-label="Next slide">&#9654;</button>
+        )}
       </div>
       <div className="carousel-navigation">
         {services.map((service, index) => (

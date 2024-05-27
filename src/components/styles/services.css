@@ -18,18 +18,22 @@
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%; /* Ajuste para el contenedor del carrusel */
+  width: 100%;
 }
 
 .carousel-slide {
   min-width: 100%;
   height: 80vh;
   display: flex;
-  
   justify-content: flex-start;
   flex-direction: row;
   box-sizing: border-box;
+}
 
+.service-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .service-image-container {
@@ -45,8 +49,7 @@
   min-width: 100%;
   max-width: 100%;
   max-height: 100%;
-  object-fit:cover;
-
+  object-fit: cover;
 }
 
 .service-text-container {
@@ -57,7 +60,6 @@
   padding: 20px;
   box-sizing: border-box;
   justify-content: center;
-
 }
 
 .service-text-container p {
@@ -102,6 +104,64 @@
 .carousel-dot:hover,
 .carousel-dot.active {
   background-color: #333;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  z-index: 1; /* Ensure the arrows are above other elements */
+}
+
+.carousel-nav:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-nav.prev {
+  left: 10px;
+}
+
+.carousel-nav.next {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-slide {
+    display: grid;
+  }
+
+  .service-image-container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
+  }
+
+  .service-image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .service-text-container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 10px;
+    z-index:2;
+  }
+
+  .service-button {
+    max-width: 100%; /* Allow button to be full width */
+  }
 }
 
 body {
