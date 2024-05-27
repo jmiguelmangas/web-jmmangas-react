@@ -1,0 +1,108 @@
+/* Hero.css */
+
+.hero {
+  position: relative;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  display: flex;
+  justify-content: flex-start; /* Alinear contenido a la izquierda */
+  align-items: center;
+  padding-left: 50px; /* Añadir padding para separación desde el borde */
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: -100px;
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 30%; /* Ajustar el ancho del contenido al 30% de la página */
+  text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.hero h1 {
+  font-size: 2.5rem; /* Reducir el tamaño del texto */
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem; /* Reducir el tamaño del subtítulo */
+  margin-bottom: 20px;
+  text-align: left; /* Asegurar alineación a la izquierda */
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: flex-start; /* Alinear los botones a la izquierda */
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 50px; /* Hacer los botones redondos */
+  border: 2px solid white; /* Borde blanco */
+  margin: 0 10px 0 0; /* Espaciado entre botones */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s; /* Transición suave del color del texto */
+}
+
+.hero-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: -1;
+  transition: left 0.4s;
+}
+
+.hero-button:hover::before {
+  left: 0;
+}
+
+.hero-button:hover {
+  color: black;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo para mayor contraste */
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center; /* Centrar el contenido en pantallas pequeñas */
+    padding-left: 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem; /* Ajuste del tamaño del texto en pantallas pequeñas */
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-content {
+    width: 80%; /* Ajustar el ancho del contenido en pantallas pequeñas */
+  }
+
+  .hero-buttons {
+    justify-content: center; /* Centrar los botones en pantallas pequeñas */
+  }
+}

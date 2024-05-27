@@ -1,38 +1,120 @@
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #000;
   color: white;
+  height: 100px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.logo img {
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.search input {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.social-icons {
+  display: flex;
+  margin-left: 20px;
+}
+
+.social-icons a {
+  margin: 0 5px;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav.nav-open {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .search {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
   }
 }
