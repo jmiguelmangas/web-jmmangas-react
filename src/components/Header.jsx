@@ -27,25 +27,27 @@ const Header = () => {
           <li><a href="#about">Sobre mí</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
-        <div className="search">
-          <input type="text" placeholder="Buscar..." />
-          <SearchIcon />
-        </div>
-        <div className="social-icons">
-          <a href="https://www.instagram.com/jmiguelmangas" target="_blank" rel="noopener noreferrer">
-            <InstagramIcon />
-          </a>
-          <a href="mailto:jmmangas@gmail.com">
-            <AlternateEmailIcon />
-          </a>
-          <a href="https://www.threads.net/@jmiguelmangas" target="_blank" rel="noopener noreferrer">
-            <WhatshotIcon />
-          </a>
-          <a href="https://www.tiktok.com/@jmiguelmangas" target="_blank" rel="noopener noreferrer">
-            <WhatshotIcon />
-          </a>
-        </div>
       </nav>
+        <div className="socialmedia">
+          <div className="search">
+            <input type="text" placeholder="Buscar..." />
+            <SearchIcon />
+          </div>
+          <div className="social-icons">
+            <a href="https://www.instagram.com/jmiguelmangas" target="_blank" rel="noopener noreferrer">
+              <InstagramIcon />
+            </a>
+            <a href="mailto:jmmangas@gmail.com">
+              <AlternateEmailIcon />
+            </a>
+            <a href="https://www.threads.net/@jmiguelmangas" target="_blank" rel="noopener noreferrer">
+              <WhatshotIcon />
+            </a>
+            <a href="https://www.tiktok.com/@jmiguelmangas" target="_blank" rel="noopener noreferrer">
+              <WhatshotIcon />
+            </a>
+          </div>
+        </div>
       <div className="hamburger" onClick={toggleMobileMenu}>
         {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
       </div>
