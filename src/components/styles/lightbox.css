@@ -1,0 +1,54 @@
+/* lightbox.css */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .close-button,
+  .prev-button,
+  .next-button {
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .close-button {
+    top: 20px;
+    right: 20px;
+  }
+  
+  .prev-button {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .next-button {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .prev-button:disabled,
+  .next-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
